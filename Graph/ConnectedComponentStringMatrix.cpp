@@ -1,48 +1,65 @@
-const n = 4;
-const m = 4;
+#include <iostream>
+#include <vector>
+#include <queue> //FIFO
+#include <cstring>  // for memset
+#include<windows.h>
+using namespace std;
+
+const int n = 2;
+const int m = 4;
 
 int visited[n][m];
 
 const int dx[] = {0, 1, -1, 0}; 
-const int dy[] = {1, 0, 0,  1}; 
+const int dy[] = {1, 0, 0, -1}; 
 
 bool is_visited(int x, int y, string inPut[], char c){
 
-    if (x>=0 and y>=0 and x < n and y < n){
-        if (visited[x][y] == false and inPut[x][y] ==c)
+    if (x>=0 and y>=0 and x < n and y < m){
+        if (visited[x][y] == false and inPut[x][y] ==c){
+            
             return true;
+        }
         else return false;
-
-
 
     }
     else return false;
 
 
 }
-int COUNT;
+int COUNT = 0;
 void connectedComponentString(string inPut[]){
 
-    for (i = 0; i < n; ++i){
-        for (j = 0; j < m; ++j){
+    for (int i = 0; i < n; ++i){
+        for (int j = 0; j < m; ++j){
             if (visited[i][j] == false){
                 char c = inPut[i][j]; // save the char that is not visited
-                visited[i][j] = true;
+               // cout << "char = "<< c<< endl;  
+                
             
-                queue<pair<char, char> > q;
+                queue<pair<int, int> > q;
                 q.push({i,j});
+                visited[i][j] = true;
+               
                 
                 while (!q.empty()){
-                    pair<char, char> temp_q = q.front();
+                    pair<int, int> temp_q = q.front();
                     q.pop();
-                    int x = temp_q.first, y = temp.second;
-
+                    //cout << q.empty();
+                    int x = temp_q.first; int  y = temp_q.second;
+                   
+                    //Sleep(5000);
                     for (int i = 0; i<4; ++i){
-                        int newX = x +dx[i];
-                        int newY = y +dy[i];
-                        if (is_visited(newX, newy, inPut, c)){
+                        int newX =   x +  dx[i];
+                        int newY =   y +  dy[i];
+                        //cout << "newYX = " <<newY<<" "<<newX<<" "<<inPut[newX][newY] <<endl;
+                        
+                             
+
+                        if (is_visited(newX, newY, inPut, c)){
+                           
                             
-                            visited[newX][newX] = true;
+                            visited[newX][newY] = true;
                             q.push({newX, newY});
  
 
@@ -50,29 +67,24 @@ void connectedComponentString(string inPut[]){
 
                     }
 
-
-
-
                 }
 
 
             COUNT += 1;
             }
-            
-
+         
 
         }
     }
 
-
+    cout << COUNT << endl;
 }
-
-
 
 int main(){
     string inPut[] = {"bbba", 
-                    "baab",
-                    "aaab",
-                    "cbbc" };
+                     "baaa"};
+    memset(visited, false, sizeof visited);
     connectedComponentString(inPut);
+    
+    return 0;
 }
