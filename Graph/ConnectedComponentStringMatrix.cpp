@@ -10,8 +10,10 @@ const int m = 4;
 
 int visited[n][m];
 
-const int dx[] = {0, 1, -1, 0}; 
-const int dy[] = {1, 0, 0, -1}; 
+const int dx[] = {0, 1, -1, 0};   // movement of the agent 0 top, 1 right, -1 left, 0 down
+const int dy[] = {1, 0, 0, -1}; // movement of the agent 1 top, 0 right, 0 left, -1 down
+
+// check whether the agent has visited a cell
 
 bool is_visited(int x, int y, string inPut[], char c){
 
