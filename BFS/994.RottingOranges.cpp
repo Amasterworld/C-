@@ -8,8 +8,16 @@ Every minute, any fresh orange that is 4-directionally adjacent to a rotten oran
 Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
 
 */
-/* SOLUTION: BDS needs to use but we have MULTI source here, fore example gird = {{}}
+/* SOLUTION: BFS needs to use but we have MULTI source here, fore example grid = {{}}
+then 1st we store all source (rotten orange) at 0 min to the 1st queue: q
 
+2nd: store all rotten oranges connected with rotten oranges stored in q to the second queue, namely, q_n, at  1 mins
+when q is empty that means we get all rotten oranges at 1mins,  assign q = q_n, and reset q_n =temp_pq;
+after assigning q = q_n, and q is empty, that mean grid contains 0 fresh orange return 0, else time++
+if (!q.emmpty()) time++;
+
+3rd: repeat step 2 until cond while (!q.empty() || !q_n.empty()) is satisfied.
+4rd: traveser all element in grid, if any cell = 1 that means it is isolated, and never can be rotten.
 */
 
 
@@ -79,7 +87,7 @@ public:
 
         }
 
-    // now if still remains any fresh oranges in the grid, that means they never can be rotten (they are isloted)
+    // now if still remains any fresh oranges in the grid, that means they never can be rotten (they are isolated)
      for ( int i = 0; i < m; ++i){
          for ( int j = 0; j < n; ++j){
 
