@@ -1,0 +1,206 @@
+/*
+
+3. Which of the following is correct?
+a) Base class pointer object cannot point to a derived class object
+b) Derived class pointer object cannot point to a base class object
+c) A derived class cannot have pointer objects
+d) A base class cannot have pointer objects
+
+- Answer: b ex: C++ does not allow a derived class pointer to pint a base
+class object. whereas Base class pointer can point the a derived class object. Both
+base and derived class can have pointer objects.
+
+6. Which of the following cannot be a friend?
+a) Function
+b) Class
+c) Object
+d) Operator function
+- Answer: c.
+
+8. Which of the following provides a programmer with the facility of using object of a class inside other classes?
+a) Inheritance
+b) Composition
+c) Abstraction
+d) Encapsulation
+
+- Answer: b, The concept of using objects of one class into another class is known as Composition.
+
+9. How many types of polymorphism are there in C++?
+a) 1
+b) 2
+c) 3
+d) 4
+View Answer
+Answer: b
+Explanation: There are two types of polymorphism in C++ namely run-time and 
+compile-time polymorphisms.
+
+10. How run-time polymorphisms are implemented in C++?
+a) Using Inheritance
+b) Using Virtual functions
+c) Using Templates
+d) Using Inheritance and Virtual functions
+View Answer
+Answer: d
+Explanation: Run-time polymorphism is implemented using Inheritance and virtual 
+in which object decides which function to call.
+
+11. How compile-time polymorphisms are implemented in C++?
+a) Using Inheritance
+b) Using Virtual functions
+c) Using Templates
+d) Using Inheritance and Virtual functions
+View Answer
+Answer: c
+Explanation: Compile-time polymorphism is implemented using templates in which the 
+types(which can be checked during compile-time) are used decides which function to be called.
+
+14. Which of the following explains the overloading of functions?
+a) Virtual polymorphism
+b) Transient polymorphism
+c) Ad-hoc polymorphism
+d) Pseudo polymorphism
+View Answer
+Answer: c
+Explanation: Ad-hoc polymorphism is a type of polymorphism in which a function denotes 
+heterogeneous implementation depending upon the types of argument.
+
+2. Which of the following cannot be used with the virtual keyword?
+a) Class
+b) Member functions
+c) Constructors
+d) Destructors
+View Answer
+Answer: c
+Explanation: Virtual keyword cannot be used with constructors as constructors 
+are defined to initialized an object of particular class hence no other class 
+needs constructor of other class.
+
+3. Which concept is used to implement late binding?
+a) Virtual functions
+b) Operator functions
+c) Constant functions
+d) Static functions
+View Answer
+Answer: a
+Explanation: Virtual functions are used to implement the concept of late 
+binding i.e. binding actual functions to their calls.
+
+6. Which of the following is a static polymorphism mechanism?
+a) Function overloading
+b) Operator overloading
+c) Templates
+d) All of the mentioned
+View Answer
+Answer: d
+Explanation: All the options mentioned above uses static polymorphism mechanism. 
+As the conflicts in all these types of functions are resolved during compile-time.
+
+10. Which of the following statement is true?
+I) In Procedural programming languages, all function calls are resolved at compile-time
+II) In Object Oriented programming languages, all function calls are resolved at compile-time
+a) I only
+b) II only
+c) Both I and II
+d) Neither I nor II
+View Answer
+Answer: a
+Explanation: In Procedural programming like C we don’t have the concept of polymorphism, 
+therefore, all the function calls are resolved at the compile-time but in case of OOP languages sue to polymorphism concept all function calls are not resolved at compile-time.
+
+14. Which of the following is used to make an abstract class?
+a) By using virtual keyword in front of a class declaration
+b) By using an abstract keyword in front of a class declaration
+c) By declaring a virtual function in a class
+d) By declaring a pure virtual function in a class
+View Answer
+Answer: d
+Explanation: Abstract class should have at least one pure virtual function. 
+Therefore to declare an abstract class one should declare a pure virtual function in a class.
+
+#include<iostream>
+using namespace std;
+  
+class Base
+{
+   int x;
+public:
+    // Pure Virtual Function
+    virtual void fun() = 0;
+    int getX() { return x; }
+};
+  
+// This class inherits from Base and implements fun()
+class Derived: public Base
+{
+    int y;
+public:
+    void fun() { cout << "fun() called"; }
+};
+  
+int main(void)
+{
+    Derived d;
+    d.fun();
+    return 0;
+}
+
+
+2. What is virtual inheritance?
+a) C++ technique to avoid multiple copies of the base class into children/derived class
+b) C++ technique to avoid multiple inheritances of classes
+c) C++ technique to enhance multiple inheritance
+d) C++ technique to ensure that a private member of the base class can be accessed somehow
+View Answer
+Answer: a
+Explanation: Virtual inheritance is a C++ technique with which it ensures that 
+a derived class contains only one copy of the base class’s variables.
+ Refer Wikipedia for more info.
+
+https://www.sandordargo.com/blog/2020/12/23/virtual-inheritance
+
+
+9. Which of the following is correct about new and malloc?
+i) new is an operator whereas malloc is a function
+ii) new calls constructor malloc does not
+iii) new returns required pointer whereas malloc returns void pointer and needs to be typecast
+a) i and ii
+b) ii and iii
+c) i and iii
+d) i, ii and iii
+View Answer
+Answer: d
+Explanation: All the statements about the new and malloc are correct. 
+new is an operator whereas malloc() is a function. 
+The constructor is called when new is used and new returns
+required type memory pointer.
+
+5. Which is the condition that must be followed if the array of objects is declared without initialization, only with size of array?
+a) The class should have separate constructor for each object
+b) The class must have no constructors
+c) The class should not have any member function
+d) The class must have a default or zero argument constructor
+View Answer
+Answer: d
+Explanation: The class must have a default/zero argument constructor.
+Since the declaration is done by only specifying the size of array, 
+the class must have default a construct to be called by default 
+to reserve memory for each object. Also, we can’t specify the arguments in this type
+of declaration hence the class should provide a default initialization.
+
+class_name a(4); hence  to be array of object, contructor of a class shoule be a default 
+or zero argement constructor. Otherwise 4 will be a parameter for contructor.
+
+
+15. Is an array of characters always a string?
+a) Yes, always
+b) Yes, if each character is terminated by null
+c) No, since each character is terminated by null
+d) No, never
+View Answer
+Answer: d
+Explanation: The character arrays are not the same as string. 
+The string once created then remains the same. The character array values may 
+change.
+
+*/
