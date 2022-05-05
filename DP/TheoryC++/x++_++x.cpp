@@ -11,6 +11,10 @@ int main(){
     x = 5; // reset x = 5 
     z += x++ + 5; // execute z += 5+5 then z = 10 and x++ = 6
     cout <<"z = "<<z;
+    
+    // now we can think: How does C++ compiler differs between overloaded postfix and prefix operators?
+    // prefix ++x  == increase x 1st then execute the others, x++ = execute the other, last increase x.
+    // the compiler knows which is A postfix ++, because it HAS a DUMMY parameter
     return 0; 
 
 
