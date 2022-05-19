@@ -1,5 +1,5 @@
 
-![ask](https://user-images.githubusercontent.com/73497298/169246521-20cef464-b755-441e-bf17-1224e512304d.gif)
+
 
 
 <img width="1370" alt="DFS" src="https://user-images.githubusercontent.com/73497298/169246550-15556be8-9ae3-4ed2-b4be-f442fa4ef35c.png">
