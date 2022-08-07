@@ -50,7 +50,9 @@ int main(){
     
     std::vector<int> nums = {1, 5, 0, 3, 5};
     Solution s;
-    std::cout<<s.minimumOperations(nums)<<std::endl;
+    std::cout<<s.minimumOperations(nums)<<std::endl; // output 3 - correct
+    //std::vector<int> nums = {0};
+    std::cout<<s.minimumOperations(nums)<<std::endl; // output 0 - correct
     return 0;
 
 
