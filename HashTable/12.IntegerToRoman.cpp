@@ -71,6 +71,10 @@ public:
 int main(){
     size_t num = 1994;
     Solution s(num);
-    std::cout<<s.intToRoman()<<'\n';
+    std::cout<<s.intToRoman()<<'\n';// MCMXCIV - correct
+
+    //size_t num = 3999;
+    //std::cout<<s.intToRoman()<<'\n';// "MMMCMXCIX" -correct 
+ 
     return 0;
 }
