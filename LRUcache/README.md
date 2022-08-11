@@ -23,6 +23,7 @@ Data structure:
 Contributing:
 	
 	● The method GET and PUT, each run in O(1) average complexity
+	● Using Gtest to test the program
 
 Roadmap:
 	
