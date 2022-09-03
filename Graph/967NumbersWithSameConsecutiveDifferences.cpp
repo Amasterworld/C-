@@ -34,7 +34,7 @@ class Solution{
 
     void search_num(int i, int n, int k, std::vector<int>& ans){
         /*based condition*/
-        if(to_string(i).size() == n){
+        if(std::to_string(i).size() == n){
             ans.emplace_back(i);
             return;
         }
