@@ -30,10 +30,21 @@ SC: O(n) - we use one matrix to store the results.
 #include<iostream>
 #include<vector>
 
+
 class Solution{
+   /* int num_digit(int n){
+         int count{};
+         while(n){
+             count++;
+             n /= 10;
+             
+         }
+        return count;     
+    }*/
 
     void search_num(int i, int n, int k, std::vector<int>& ans){
         /*based condition*/
+        /*using to_string can be slower than using custom function num_digit*/
         if(std::to_string(i).size() == n){
             ans.emplace_back(i);
             return;
