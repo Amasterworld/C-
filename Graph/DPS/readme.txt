@@ -1,1 +1,1 @@
-Learn how to use depth first search (DPS) algorithm 
+Learn how to use depth first search (DFS) algorithm 
