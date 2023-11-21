@@ -41,11 +41,23 @@ bool CanFormPaladrome(const string& s)  {
 }
 
 int main(){
-    string s = "GATATTGG";
+    string s1 = "GATATTGG";
 
-    cout<< CanFormPaladrome(s);
+    if (CanFormPaladrome(s1)){
+        cout<<"The given string "<<s1<< "is palindrome ";
+    }
+    else{
+        cout<<"The given string " <<s1<< " is NOT palindrome "<<'\n';
+    }
 
+    string s2 = "GATATTG";
 
+    if (CanFormPaladrome(s2)){
+        cout<<"The given string "<<s2<< " is palindrome ";
+    }
+    else{
+        cout<<"The given string" <<s2<< " is NOT palindrome ";
+    }
 
     return 0;
 }
