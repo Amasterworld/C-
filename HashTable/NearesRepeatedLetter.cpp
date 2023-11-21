@@ -13,7 +13,7 @@ int main()  {
     vector<string> s ={"All", "work", "and" , "no", "play", "makes", "for", "no", "play", "makes", "work","no", "fun", "and", "no", "result"};
     unordered_map<string, int> letter;
     
-     int min_dist = numeric_limits<int>::max();
+     int min_dist = INT_MAX;
     for (int i = 0; i <s.size(); i++) {
         
         auto near = letter.find(s[i]);

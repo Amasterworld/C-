@@ -30,11 +30,13 @@ bool CanFormPaladrome(const string& s)  {
     int count = 0;
     for (auto const& [key,value]: char_frequency){
         cout << key<<" "<< value <<endl;
+        // count how many time the char has an appearance  is an odd number 
         if (value%2 != 0) count++;
 
 
     }
-    cout <<count<< endl;
+    //cout <<count<< endl;
+    // return false if more than 1 difference char hiving its appearance is an odd number. Else return true
     return count>1? false: true;
 }
 
