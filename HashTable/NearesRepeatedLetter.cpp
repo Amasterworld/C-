@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <climits>
 using namespace std;
 
 int main()  {
@@ -15,10 +16,10 @@ int main()  {
     
      int min_dist = INT_MAX;
     for (int i = 0; i <s.size(); i++) {
-        
+        std::cout<<"s at i "<<s[i]<<'\n';
         auto near = letter.find(s[i]);
         if (near != letter.end()) {
-            cout<near<<endl;
+            //cout<near->first<<endl;
             min_dist = min(min_dist, i - near->second);
             cout<<"her " <<min_dist <<endl;
 

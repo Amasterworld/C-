@@ -21,6 +21,6 @@ int main()
    cout<<A::getX()<<endl; // the function 
    cout<<A::getY()<<endl; // the function 
    cout<<A::x<<endl; //ok
-   cout<<A::y<<endl;
+   //cout<<A::y<<endl; //error ys is static number but it still is private number
    return 0;
 }
