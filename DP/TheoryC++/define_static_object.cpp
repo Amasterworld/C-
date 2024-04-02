@@ -34,6 +34,7 @@ in this case data type of a is A, but we want to use a in B then A B::a; (1)
 Note that the above program calls B’s constructor 3 times for 3 objects
  (b1, b2, and b3), but calls A’s constructor only once. 
  The reason is, static members are shared among all objects. 
+ if we delete static keyword in line 15, then the A's constructor is called 3 times, and we can have: b1.a
  That is why they are also known as class members or class fields. Also, static members can be accessed without any object, see the below program where static member ‘a’ is accessed without any object
 
 */
